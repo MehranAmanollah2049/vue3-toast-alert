@@ -1,3 +1,29 @@
+
+.NotificationContainer {
+    width: 100%;
+    height: auto;
+    float: right;
+    position: fixed;
+    z-index: 1000;
+    top: 15px;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 15px;
+    padding: 0 1rem;
+    direction: rtl;
+}
+
+.NotificationContainer.ltr {
+    direction: ltr;
+}
+
+.NotificationContainer * {
+    font-family: 'yekan_Medium';
+}
+
 .AlertBox {
     width: auto;
     max-width: 100%;
@@ -14,11 +40,11 @@
     opacity: 0;
     visibility: hidden;
     float: right;
-    transition: var(--theme-transition);
+    transition: 0.2s ease-in-out;
 }
 
-body.dark .AlertBox {
-    background-color: var(--dark-bg2);
+.NotificationContainer.dark .AlertBox {
+    background-color: var(--toast-bg-dark);
     box-shadow: 0px 4px 44px 0px rgba(0, 0, 0, 0.158);
 }
 
@@ -86,14 +112,14 @@ body.dark .AlertBox {
     justify-content: center;
     align-items: center;
     position: relative;
-    transition: var(--theme-transition);
+    transition: 0.2s ease-in-out;
 }
 
 .AlertBox.success .icon {
     background-color: #d1f0db;
 }
 
-body.dark .AlertBox.success .icon {
+.NotificationContainer.dark .AlertBox.success .icon {
     background-color: #38cb6e41;
 }
 
@@ -101,7 +127,7 @@ body.dark .AlertBox.success .icon {
     background-color: #f7d2d2;
 }
 
-body.dark .AlertBox.error .icon {
+.NotificationContainer.dark .AlertBox.error .icon {
     background-color: #eb3d603a;
 }
 
@@ -109,7 +135,7 @@ body.dark .AlertBox.error .icon {
     background-color: rgba(255, 153, 0, 0.123);
 }
 
-body.dark .AlertBox.warning .icon {
+.NotificationContainer.dark .AlertBox.warning .icon {
     background-color: rgba(255, 153, 0, 0.247);
 }
 
@@ -131,15 +157,15 @@ body.dark .AlertBox.warning .icon {
 }
 
 .AlertBox.success .icon .circle circle {
-    stroke: var(--success);
+    stroke: var(--toast-success);
 }
 
 .AlertBox.error .icon .circle circle {
-    stroke: var(--error);
+    stroke: var(--toast-error);
 }
 
 .AlertBox.warning .icon .circle circle {
-    stroke: var(--warning);
+    stroke: var(--toast-warning);
 }
 
 @keyframes rotation {
@@ -159,18 +185,18 @@ body.dark .AlertBox.warning .icon {
 }
 
 .AlertBox.success .icon .icon-svg {
-    stroke: var(--success);
+    stroke: var(--toast-success);
     transform: scale(0.70);
 }
 
 .AlertBox.warning .icon .icon-svg {
-    fill: var(--warning);
+    fill: var(--toast-warning);
     transform: scale(0.60);
 }
 
 
 .AlertBox.error .icon .icon-svg {
-    stroke: var(--error);
+    stroke: var(--toast-error);
     transform: scale(0.70) translateX(-0.5px);
 }
 
@@ -180,10 +206,10 @@ body.dark .AlertBox.warning .icon {
     float: right;
     font-family: 'yekan_Medium';
     color: var(--title);
-    transition: var(--theme-transition);
+    transition: 0.2s ease-in-out;
 }
 
-body.dark .title {
+.NotificationContainer.dark .title {
     color: white;
 }
 
@@ -208,10 +234,10 @@ body.dark .title {
     height: 15px;
     float: right;
     fill: var(--title);
-    transition: var(--theme-transition);
+    transition: 0.2s ease-in-out;
 }
 
-body.dark .removeIcon svg  {
+.NotificationContainer.dark .removeIcon svg  {
     fill: white;
 }
 

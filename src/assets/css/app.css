@@ -1,4 +1,5 @@
 
+
 .Buttons {
     width: 100vw;
     height: 100vh;
@@ -27,15 +28,15 @@
 }
 
 .btns.success {
-    background-color: var(--success);
+    background-color: #38cb6e;
 }
 
 .btns.error {
-    background-color: var(--error);
+    background-color: #eb3d5f;
 }
 
 .btns.warning {
-    background-color: var(--warning);
+    background-color: #f90;
 }
 
 

@@ -73,7 +73,3 @@ const removeAlertItem = () => {
         </div>
     </div>
 </template>
-
-<style scoped>
-@import url('@/assets/css/components/Notification/AlertItem.css');
-</style>
