@@ -1,0 +1,234 @@
+.AlertBox {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background-color: white;
+    padding: 0.6rem;
+    pointer-events: all;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 4px 44px 0px rgba(37, 51, 67, 0.125);
+    opacity: 0;
+    visibility: hidden;
+    float: right;
+    transition: var(--theme-transition);
+}
+
+body.dark .AlertBox {
+    background-color: var(--dark-bg2);
+    box-shadow: 0px 4px 44px 0px rgba(0, 0, 0, 0.158);
+}
+
+.AlertBox.show {
+    animation: show_toast 0.4s ease-in-out 1 forwards;
+}
+
+.AlertBox.remove {
+    animation: remove_toast 0.4s ease-in-out 1 forwards;
+}
+
+@keyframes show_toast {
+    0% {
+        margin-top: var(--top);
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.60);
+    }
+
+    100% {
+        margin-top: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+}
+
+@keyframes remove_toast {
+    0% {
+        margin-top: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+
+    100% {
+        margin-top: var(--top);
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.50);
+    }
+}
+
+.right-alert,
+.left-alert {
+    width: auto;
+    height: auto;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.right-alert {
+    width: calc(100% - 15px);
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    float: right;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: var(--theme-transition);
+}
+
+.AlertBox.success .icon {
+    background-color: #d1f0db;
+}
+
+body.dark .AlertBox.success .icon {
+    background-color: #38cb6e41;
+}
+
+.AlertBox.error .icon {
+    background-color: #f7d2d2;
+}
+
+body.dark .AlertBox.error .icon {
+    background-color: #eb3d603a;
+}
+
+.AlertBox.warning .icon {
+    background-color: rgba(255, 153, 0, 0.123);
+}
+
+body.dark .AlertBox.warning .icon {
+    background-color: rgba(255, 153, 0, 0.247);
+}
+
+.icon .circle {
+    position: absolute;
+    inset: 0;
+    fill: transparent;
+    stroke: transparent;
+    overflow: visible;
+}
+
+.icon .circle circle {
+    stroke-width: 1.5px;
+    stroke-dasharray: 94.2477796077;
+    stroke-dashoffset: 0;
+    transform: rotate(268deg);
+    transform-origin: center;
+    animation: rotation var(--timer) linear 1 forwards;
+}
+
+.AlertBox.success .icon .circle circle {
+    stroke: var(--success);
+}
+
+.AlertBox.error .icon .circle circle {
+    stroke: var(--error);
+}
+
+.AlertBox.warning .icon .circle circle {
+    stroke: var(--warning);
+}
+
+@keyframes rotation {
+    100% {
+        stroke-dashoffset: 94.2477796077;
+    }
+}
+
+.AlertBox:hover .icon .circle circle {
+    animation-play-state: paused;
+}
+
+.icon .icon-svg {
+    width: 100%;
+    height: 100%;
+    float: right;
+}
+
+.AlertBox.success .icon .icon-svg {
+    stroke: var(--success);
+    transform: scale(0.70);
+}
+
+.AlertBox.warning .icon .icon-svg {
+    fill: var(--warning);
+    transform: scale(0.60);
+}
+
+
+.AlertBox.error .icon .icon-svg {
+    stroke: var(--error);
+    transform: scale(0.70) translateX(-0.5px);
+}
+
+.title {
+    width: calc(100% - 40px);
+    font-size: 15px;
+    float: right;
+    font-family: 'yekan_Medium';
+    color: var(--title);
+    transition: var(--theme-transition);
+}
+
+body.dark .title {
+    color: white;
+}
+
+.removeIcon {
+    width: 25px;
+    height: 25px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.removeIcon:hover {
+    background-color: #a4aab619;
+}
+
+.removeIcon svg {
+    width: 15px;
+    height: 15px;
+    float: right;
+    fill: var(--title);
+    transition: var(--theme-transition);
+}
+
+body.dark .removeIcon svg  {
+    fill: white;
+}
+
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    float: right;
+    border-radius: 100px;
+    border: solid 1px transparent;
+    border-top-color: var(--title);
+    animation: spinner_loading 0.6s linear infinite;
+    transform: translateY(-1px);
+}
+
+@keyframes spinner_loading {
+    to {
+        transform: translateY(-1px) rotate(360deg);
+    }
+}
+

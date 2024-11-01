@@ -1,0 +1,51 @@
+
+.Buttons {
+    width: 100vw;
+    height: 100vh;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 2rem;
+}
+
+.btns {
+    width: auto;
+    height: 43px;
+    float: right;
+    border-radius: 6px;
+    color: white;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'yekan_Medium';
+    user-select: none;
+}
+
+.btns.success {
+    background-color: var(--success);
+}
+
+.btns.error {
+    background-color: var(--error);
+}
+
+.btns.warning {
+    background-color: var(--warning);
+}
+
+
+@media(max-width: 400px)
+{
+    .Buttons {
+        flex-direction: column;
+    }
+
+    .btns {
+        width: 100%;
+    }
+}
