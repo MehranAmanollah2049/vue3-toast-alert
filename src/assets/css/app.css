@@ -1,6 +1,6 @@
 .Buttons {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     float: right;
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@
     float: right;
     border-radius: 6px;
     color: white;
-    padding: 0 1.5rem;
+    padding: 0.3rem 1.5rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,14 +37,19 @@
     background-color: #f90;
 }
 
+.btns.dark {
+    background-color: #0b233e;
+    transition: 0.2s ease-in-out;
+}
 
-@media(max-width: 400px)
+body.dark .btns.dark {
+    background-color: white;
+    color: #0b233e;
+}
+
+@media(max-width: 600px)
 {
     .Buttons {
-        flex-direction: column;
-    }
-
-    .btns {
-        width: 100%;
+        flex-wrap: wrap;
     }
 }

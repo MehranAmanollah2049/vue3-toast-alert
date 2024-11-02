@@ -9,6 +9,7 @@
     --toast-warning: #f90;
     --toast-bg-light: white;
     --toast-bg-dark: #0e2338;
+    --dark-bg: #0e2338;
 }
 
 
@@ -23,10 +24,21 @@
 body {
     background-color: var(--bg);
     direction: rtl;
+    transition: 0.2s ease-in-out;
+    
+}
+
+
+body.dark {
+    background-color: var(--dark-bg);
+    background-image: linear-gradient(to top, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.048));
 }
 
 #app {
     position: relative;
     overflow: clip;
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
