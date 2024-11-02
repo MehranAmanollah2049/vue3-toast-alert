@@ -1,11 +1,11 @@
 
 .NotificationContainer {
-    width: 100%;
+    width: 100vw;
     height: auto;
     float: right;
     position: fixed;
     z-index: 1000;
-    top: 15px;
+    inset: 15px 0 auto;
     pointer-events: none;
     display: flex;
     justify-content: center;
