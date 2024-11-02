@@ -63,15 +63,10 @@ toast('Your alert message','type:success,error,warning','timer: 5')
 
 ## Customization
 
-You can customize the appearance of notifications by modifying the CSS file included in the package. The default styles can be found in the `style.css` file.
-
-### CSS
-
-To include the default styles, make sure to import the CSS file in your main entry file:
-
 ```javascript
-import 'vue3-toast-alert/assets/css/style.css'
+<NotificationContainer :is-dark-mode="true" :ltr="true" />
 ```
+You can customize the appearance of notifications by modifying the CSS file included in the package. The default styles can be found in the `style.css` file.
 
 ## Example
 
@@ -79,10 +74,8 @@ Here’s a quick example of how to integrate the notification system into your a
 
 ```javascript
 <template>
-  <div>
     <NotificationContainer />
     <button @click="showToast">Show Toast</button>
-  </div>
 </template>
 
 <script setup>
